@@ -2,50 +2,101 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Complete Device Setup</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <meta
+    name="description"
+    content="MAXY.FUN — Complete Device Setup"
+  />
+  <title>Complete Device Setup | MAXY.FUN</title>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
 
-  <main class="appShell">
-
-    <div class="setupCard">
-
-      <div class="topRow">
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-dot"></div>
         <div>
-          <p class="eyebrow">MAXY.FUN DEVICE SETUP</p>
-          <h1 id="stepTitle">Welcome</h1>
-        </div>
-
-        <div class="stepCounter" id="stepCounter">
-          Step 1
+          <div class="brand-name">MAXY.FUN</div>
+          <div class="brand-subtitle">COMPLETE DEVICE SETUP</div>
         </div>
       </div>
 
-      <div class="progressTrack">
-        <div class="progressFill" id="progressFill"></div>
-      </div>
-
-      <div class="contentArea" id="contentArea">
-        <!-- JS fills this -->
-      </div>
-
-      <div class="navRow">
-        <button class="secondaryButton" id="backButton">
-          Back
+      <div class="topbar-actions">
+        <button id="saveBtn" class="mini-btn" type="button">
+          Save
         </button>
 
-        <button class="primaryButton" id="nextButton">
-          Continue
+        <button id="resetBtn" class="mini-btn danger-btn" type="button">
+          Reset
         </button>
       </div>
+    </header>
 
-    </div>
+    <section class="progress-area">
+      <div class="progress-meta">
+        <span id="progressLabel">Setup 1 of 72</span>
+        <span id="progressPercent">1%</span>
+      </div>
 
+      <div class="progress-track">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </section>
+
+    <section class="setup-card" id="setupCard">
+      <div class="step-tag" id="stepTag">INITIALISING</div>
+
+      <h1 id="stepTitle">Preparing your device...</h1>
+
+      <p id="stepDescription">
+        Please wait while the setup wizard starts.
+      </p>
+
+      <div id="stepContent" class="step-content"></div>
+
+      <div id="messageBox" class="message-box hidden"></div>
+
+      <div class="card-footer">
+        <button
+          id="backBtn"
+          class="secondary-btn"
+          type="button"
+        >
+          ← Back
+        </button>
+
+        <div class="step-hint" id="stepHint"></div>
+
+        <button
+          id="nextBtn"
+          class="primary-btn"
+          type="button"
+        >
+          Continue →
+        </button>
+      </div>
+    </section>
+
+    <section class="status-row">
+      <div class="status-pill">
+        <span class="status-indicator"></span>
+        <span id="statusText">System ready</span>
+      </div>
+
+      <div class="step-counter" id="stepCounter">
+        1 / 72
+      </div>
+    </section>
   </main>
 
-  <div class="toast" id="toast"></div>
+  <div id="toast" class="toast" aria-live="polite"></div>
 
   <script src="script.js"></script>
 </body>
